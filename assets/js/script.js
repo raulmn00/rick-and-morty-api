@@ -38,3 +38,10 @@ function viewMore() {
     page++;
     getCharacter();
 }
+window.addEventListener("scroll", function () {
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+  
+    if (scrollTop + clientHeight >= scrollHeight - 5) {
+      viewMore();
+    }
+  });
